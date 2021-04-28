@@ -31,7 +31,15 @@ export default {
   },
   methods: {
     async login() {
-      // enter your code here
+      let { data } = await axios({
+      url: '/login',
+      method: 'POST',
+      data: {
+        email: this.email,
+        password: this.password,
+        },
+      });
+      
     },
   },
 };
