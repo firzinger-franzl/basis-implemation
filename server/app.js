@@ -4,7 +4,7 @@ const path = require('path');
 const routes = require('./routes');
 const errorHandler = require('./middleware/errorHandler');
 const { PORT, NODE_ENV, SESSION_LIFETIME, SESSION_NAME, SESSION_SECRET } = process.env;
-
+const session = require('express-session')
 
 require('dotenv').config({ path: __dirname + '/.env' });
 

@@ -3,10 +3,17 @@ const router = express.Router();
 // enter your code here
 
 router.post('/login', (req, res) => {
-  // enter your code here
+  
+  let password = req.body.password;
+  let email = req.body.email;
+  if (email && password) {
+    const user = users.find((el => el.email === email && el.password === password));
+
+  }
+
 });
 
-router.get('/logout', redirectLogin, (req, res) => {
+router.get('/logout', /*redirectLogin*/ (req, res) => {
   req.session.destroy();
   res.clearCookie(process.env.SESSION_NAME);
 });
