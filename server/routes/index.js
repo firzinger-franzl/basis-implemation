@@ -7,7 +7,7 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/logout', redirectLogin, (req, res) => {
-  // enter your code here
+ 
 });
 
 router.post('/register', (req, res) => {

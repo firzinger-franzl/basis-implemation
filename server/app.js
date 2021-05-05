@@ -16,8 +16,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(express.json());
 
-let { PORT, NODE_ENV, SESSION_LIFETIME, SESSION_NAME, SESSION_SECRET } = process.env;
-
+//
 // Register middleware for express sessions here
 app.use(
  session({
