@@ -1,6 +1,10 @@
 const express = require('express');
 const router = express.Router();
-// enter your code here
+
+const redirectLogin = (req, res, next) => {
+  if (!req.session.userId) res.status(400).send('You are not logged in!');
+  else next();
+  };
 
 router.post('/login', (req, res) => {
   let password = req.body.password;
@@ -15,7 +19,7 @@ router.post('/login', (req, res) => {
   }
 );
 
-router.get('/logout', /*redirectLogin*/ (req, res) => {
+router.get('/logout', redirectLogin, (req, res) => {
   req.session.destroy();
   res.clearCookie(process.env.SESSION_NAME);
 });
