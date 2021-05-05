@@ -7,7 +7,8 @@ router.post('/login', (req, res) => {
 });
 
 router.get('/logout', redirectLogin, (req, res) => {
- 
+  req.session.destroy();
+  res.clearCookie(process.env.SESSION_NAME);
 });
 
 router.post('/register', (req, res) => {
@@ -15,7 +16,7 @@ router.post('/register', (req, res) => {
 });
 
 router.get('/secretdata', (req, res) => {
-  // enter your code here
+  return res.status(200).end('the prime number is 2305843009213693951');
 });
 
 module.exports = router;

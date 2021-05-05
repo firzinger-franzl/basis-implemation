@@ -13,9 +13,17 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
+
   async created() {
-    // enter your code here
-  },
+   let {data} = await axios ({
+     url: '/logout',
+     method: 'GET',
+   });
+   localStorage.clear();
+   console.log(data);
+   console.log("Logout Vue Funktioniert :DDDDD")
+  }
 };
 </script>
