@@ -11,7 +11,7 @@ router.post('/login', (req, res) => {
       req.session.userID = user.id;
       res.status(200).json({id: user.id, name: user.name});} 
       else res.status(401).send('Falsche Email oder falsches Passwort');
-    } else.res.status(400).send('Login fehlgeschlagen')
+    } else res.status(400).send('Login fehlgeschlagen')
   }
 
 });
