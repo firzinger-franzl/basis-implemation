@@ -21,7 +21,16 @@ router.get('/logout', /*redirectLogin*/ (req, res) => {
 });
 
 router.post('/register', (req, res) => {
-  // enter your code here
+  let user = {};
+  user.name = req.body.name;
+  user.email = req.body.email;
+  user.password = req.body.password;
+  let status400 = false;
+    for (value in user) {
+      if (!user[value] || user[value] == '') {
+        status400 = true;
+      }
+    }
 });
 
 router.get('/secretdata', (req, res) => {
