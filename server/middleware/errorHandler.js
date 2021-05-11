@@ -5,6 +5,6 @@ const errorHandler = (err, req, res, next) => {
     data: 'Server error',
   });
 };
-
+//Errorhandler
 
 module.exports = errorHandler;

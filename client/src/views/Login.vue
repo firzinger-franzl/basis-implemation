@@ -36,13 +36,14 @@ export default {
       method: 'POST',
       data: {
         email: this.email,
-          password: this.password,
+          password: this.password, //übergibt die Daten
         },
       });
       localStorage.setItem(
         'session',
         //Konvertiert den Wert von einen JS-Wert zu einem JSON Wert
         JSON.stringify({ id: data.id, name: data.name }) //wieso nennt man das stringify? Warum nicht einfach stringit? Oder StringThis?
+        //Konvertiert die Daten in den JSON also zum Local storage
       );
     },
   },

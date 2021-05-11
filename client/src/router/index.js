@@ -6,7 +6,7 @@ import Account from '../views/Account.vue';
 import Logout from '../views/Logout.vue';
 
 Vue.use(VueRouter);
-
+//Gibt die Routen an, über die das Programm laufen soll, ansonsten funktioniert es nur teilweise, nicht ganz, aber teilweise. Zumindest bei mir, Herr Prof. ich weiß nicht ob es bei ihnen funktioniert, aber ich habe einen anderen PC als Sie und dementsprechend auch andere Software. Wir sollten mal Plugins vergleichen 
 const routes = [
   {
     path: '/',
@@ -24,7 +24,7 @@ const routes = [
     component: Account,
     beforeEnter: (to, from, next) => {
       if (!isAuthenticated()) next({ name: 'Login' });
-      next();
+      next(); //Überprüft ob er angemeldet ist oder nicht 
     },
   },
   {
@@ -35,7 +35,7 @@ const routes = [
   {
     path: '/register',
     name: 'Register',
-    component: () => import(/* webpackPrefetch: true */ '@/views/Register.vue'),
+    component: () => import('@/views/Register.vue'),
   },
 ];
 
@@ -44,10 +44,11 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes,
 });
-
+//definiert den Router lol
 function isAuthenticated() {
   if (Vue.$cookies.get('sid')) return true;
   else return false;
 }
+//Authentifizierung obs so ist . Überprüft ob Cookies vorhanden sind
 
 export default router;

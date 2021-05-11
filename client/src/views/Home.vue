@@ -55,7 +55,14 @@ export default {
     };
   },
   created() {
-    // enter your code here
+    this.getStorageSession(); //beginnt erstmal die Storagesession, dass was ich also vergessen habe lol
   },
+  getStorageSession() {
+    let temp = JSON.parse(localStorage.getItem('session'));
+    if (temp) {
+      this.user.id = temp.id;
+      this.user.name = temp.name; 
+    }
+  }
 };
 </script>

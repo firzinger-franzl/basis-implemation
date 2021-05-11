@@ -15,7 +15,7 @@
 <script>
 import axios from "axios";
 export default {
-
+//Führt die Route aus die Dinge entfernen soll
   async created() {
    let {data} = await axios ({
      url: '/logout',
